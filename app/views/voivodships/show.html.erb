@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @voivodship.name %>
+</p>
+
+<p>
+  <strong>Councilman:</strong>
+  <%= @voivodship.councilman %>
+</p>
+
+<%= link_to 'Show districts', voivodship_districts_path(@voivodship) %> 
+<%= link_to 'Edit', edit_voivodship_path(@voivodship) %> |
+<%= link_to 'Back', voivodships_path %>

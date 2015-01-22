@@ -1,0 +1,30 @@
+<h1>Listing districts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Valid votes</th>
+      <th>Voivodship</th>
+      <th>Voters</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @districts.each do |district| %>
+      <tr>
+        <td><%= district.name %></td>
+        <td><%= district.valid_votes %></td>
+        <td><%= district.voivodship.name %></td>
+        <td><%= district.voters%></td>
+        <td><%= link_to 'Show', [district.voivodship, district] %></td>
+        <td><%= link_to 'Edit', edit_voivodship_district_path(district.voivodship, district) %></td>
+        <td><%= link_to 'Destroy', [district.voivodship, district], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ <%= link_to 'New District', new_voivodship_district_path%>
+<br>
+

@@ -1,0 +1,11 @@
+class Voivodship < ActiveRecord::Base
+  has_and_belongs_to_many :committees
+  has_many :districts
+  validates_presence_of :name, :if => :voivodshp_exists?
+  validates_presence_of:councilman
+  validates_numericality_of :councilman
+
+def voivodshp_exists?
+  voivodship.name == "Małopolskie"
+end
+end
